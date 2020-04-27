@@ -1,0 +1,8 @@
+implicitly_wait: 5
+explicit_wait_polling: 7
+
+start_page: https://sprintboards.io/auth/login
+
+# do not put here real credentials, use it for overriding by CLI options or directly
+login:
+password:
