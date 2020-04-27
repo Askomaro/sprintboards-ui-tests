@@ -61,13 +61,6 @@ class BasePageMixin:
     def _click(self, selector: str, by: By = By.XPATH):
         self._find_by(selector, by).click()
 
-    def _moveto_via_script_by(self, selector: str, by: By = By.XPATH, el: WebElement = None):
-        if not el:
-            el = self._find_by(selector, by)
-
-        # hack
-        self._driver.execute_script("arguments[0].scrollIntoView();", el)
-
     def _send_keys(self, selector: str, text: object, by: By = By.XPATH):
         txt = str(text)
         self._wait.until(EC.visibility_of_element_located((by, selector)), f'can not find {selector}')
